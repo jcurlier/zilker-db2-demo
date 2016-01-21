@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "db2": {
+    "host": "192.168.1.147",
+    "port": 50000,
+    "database": "sample",
+    "schema": "ADMIN",
+    "username": "db2admin",
+    "password": "password",
+    "name": "db2",
+    "connector": "db2"
+  }
+}

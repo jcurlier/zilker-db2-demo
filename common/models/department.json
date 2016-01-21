@@ -1,0 +1,60 @@
+{
+  "name": "Department",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "db2" : {
+      "table": "DEPARTMENT"
+    }
+  },
+  "properties": {
+    "Number": {
+      "id": true, 
+      "type": "string",
+      "required": true,
+      "db2" : {
+        "columnName": "DEPTNO",
+        "dataLength": 3,
+        "nullable": "N"
+      }
+    },
+    "Name": {
+      "type": "string",
+      "required": true,
+      "db2" : {
+        "columnName": "DEPTNAME",
+        "dataLength": 36,
+        "nullable": "N"
+      }
+    },
+    "Manager": {
+      "type": "string",
+      "db2" : {
+        "columnName": "MGRNO",
+        "dataLength": 6,
+        "nullable": "Y"
+      }
+    },
+    "AdminstratingDepartment": {
+      "type": "string",
+      "db2" : {
+        "columnName": "ADMRDEPT",
+        "dataLength": 3,
+        "nullable": "N"
+      }
+    },
+    "Location": {
+      "type": "string",
+      "db2" : {
+        "columnName": "LOCATION",
+        "dataLength": 16,
+        "nullable": "Y"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
