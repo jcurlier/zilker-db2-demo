@@ -4,16 +4,16 @@
   "idInjection": false,
   "options": {
     "validateUpsert": true,
-    "db2" : {
+    "db2": {
       "table": "DEPARTMENT"
     }
   },
   "properties": {
-    "Number": {
-      "id": true, 
+    "Id": {
       "type": "string",
+      "id": true,
       "required": true,
-      "db2" : {
+      "db2": {
         "columnName": "DEPTNO",
         "dataLength": 3,
         "nullable": "N"
@@ -22,23 +22,23 @@
     "Name": {
       "type": "string",
       "required": true,
-      "db2" : {
+      "db2": {
         "columnName": "DEPTNAME",
         "dataLength": 36,
         "nullable": "N"
       }
     },
-    "Manager": {
+    "ManagerId": {
       "type": "string",
-      "db2" : {
+      "db2": {
         "columnName": "MGRNO",
         "dataLength": 6,
         "nullable": "Y"
       }
     },
-    "AdminstratingDepartment": {
+    "AdminstratingDepartmentId": {
       "type": "string",
-      "db2" : {
+      "db2": {
         "columnName": "ADMRDEPT",
         "dataLength": 3,
         "nullable": "N"
@@ -46,7 +46,7 @@
     },
     "Location": {
       "type": "string",
-      "db2" : {
+      "db2": {
         "columnName": "LOCATION",
         "dataLength": 16,
         "nullable": "Y"
@@ -54,7 +54,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "Employees": {
+      "type": "hasMany",
+      "model": "Employee",
+      "foreignKey": "DepartmentId"
+    },
+    "AdminstratingDepartment": {
+      "type": "belongsTo",
+      "model": "Department",
+      "foreignKey": "AdminstratingDepartmentId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

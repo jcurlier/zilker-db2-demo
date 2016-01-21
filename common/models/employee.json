@@ -4,16 +4,16 @@
   "idInjection": false,
   "options": {
     "validateUpsert": true,
-    "db2" : {
+    "db2": {
       "table": "EMPLOYEE"
     }
   },
   "properties": {
-    "Number": {
-      "id": true, 
+    "Id": {
       "type": "string",
+      "id": true,
       "required": true,
-      "db2" : {
+      "db2": {
         "columnName": "EMPNO",
         "dataLength": 6,
         "nullable": "N"
@@ -22,7 +22,7 @@
     "Firstname": {
       "type": "string",
       "required": true,
-      "db2" : {
+      "db2": {
         "columnName": "FIRSTNME",
         "dataLength": 12,
         "nullable": "N"
@@ -31,7 +31,7 @@
     "Middlename": {
       "type": "string",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "MIDINIT",
         "dataLength": 1,
         "nullable": "Y"
@@ -40,16 +40,16 @@
     "Lastname": {
       "type": "string",
       "required": true,
-      "db2" : {
+      "db2": {
         "columnName": "LASTNAME",
         "dataLength": 15,
         "nullable": "N"
       }
     },
-    "Department": {
+    "DepartmentId": {
       "type": "string",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "WORKDEPT",
         "dataLength": 3,
         "nullable": "Y"
@@ -58,7 +58,7 @@
     "Phone": {
       "type": "string",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "PHONENO",
         "dataLength": 4,
         "nullable": "Y"
@@ -67,14 +67,14 @@
     "HireDate": {
       "type": "date",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "HIREDATE"
       }
     },
     "EducationLevel": {
       "type": "integer",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "EDLEVEL",
         "nullable": "N"
       }
@@ -82,7 +82,7 @@
     "Gender": {
       "type": "string",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "SEX",
         "dataLength": 1,
         "nullable": "Y"
@@ -91,7 +91,7 @@
     "BirthDate": {
       "type": "date",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "BIRTHDATE",
         "nullable": "Y"
       }
@@ -99,7 +99,7 @@
     "Salary": {
       "type": "number",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "SALARY",
         "nullable": "Y"
       }
@@ -107,7 +107,7 @@
     "Bonus": {
       "type": "number",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "BONUS",
         "nullable": "Y"
       }
@@ -115,14 +115,19 @@
     "Commission": {
       "type": "number",
       "required": false,
-      "db2" : {
+      "db2": {
         "columnName": "COMM",
         "nullable": "Y"
       }
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "Department": {
+      "type": "belongsTo",
+      "model": "Department"
+    }
+  },
   "acls": [],
   "methods": {}
 }
