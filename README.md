@@ -1,4 +1,4 @@
-# Zilker DB2 Demo
+# DB2 Demo
 ---
 
 This project is a demo project using the db2 connector for LoopBack.
